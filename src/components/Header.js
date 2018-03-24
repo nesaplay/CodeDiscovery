@@ -1,11 +1,13 @@
-import React from 'react';
+import React from 'react'
+import { Header, Icon } from 'semantic-ui-react'
 
-const Header = () => {
-    return (
-        <header>
-            PROJECT HEADER
-        </header>
-    );
-};
-
-export default Header;
+export default () => {
+	return (
+		<header>
+			<Header as="h3" icon textAlign="center">
+				<Icon name="users" circular />
+				<Header.Content>Code Discovery</Header.Content>
+			</Header>
+		</header>
+	)
+}
