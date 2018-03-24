@@ -8,7 +8,7 @@ import createSagaMiddleware from 'redux-saga'
 import registerServiceWorker from './registerServiceWorker'
 import reducers from './reducers'
 import rootSaga from './sagas/index'
-import Routes from './Routes'
+import App from './App'
 
 const sagaMiddleware = createSagaMiddleware()
 const createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore)
@@ -19,7 +19,7 @@ sagaMiddleware.run(rootSaga)
 render(
 	<BrowserRouter>
 		<Provider store={store}>
-			<Routes />
+			<App />
 		</Provider>
 	</BrowserRouter>,
 	document.getElementById('root')
