@@ -4,7 +4,7 @@ import { Input } from 'semantic-ui-react'
 const Search = ({ searchHandler }) => (
         <Input icon='github' 
             placeholder='Search github repositiories...' 
-            size='massive'
+            size='huge'
             fluid
             onChange={({ target }) => searchHandler(target.value)}
         />
