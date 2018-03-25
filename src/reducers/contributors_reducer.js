@@ -1,11 +1,13 @@
 import {
 	FETCH_CONTRIBUTORS,
 	FETCH_CONTRIBUTORS_SUCCESS,
-    FETCH_CONTRIBUTORS_ERROR
+    FETCH_CONTRIBUTORS_ERROR,
+    CONTRIBUTORS_PAGE_UP
 } from '../actions/types'
 
 const initState = {
-    data: [],
+	data: [],
+	page: 0,
 	isLoading: false,
 	isLoaded: false,
 	error: null
@@ -23,7 +25,7 @@ export default function(state = initState, action) {
 		case FETCH_CONTRIBUTORS_SUCCESS:
 			return {
 				...state,
-				data: action.payload,
+				data: [...state.data, ...action.payload],
 				isLoading: false,
 				isLoaded: true
 			}
@@ -33,6 +35,11 @@ export default function(state = initState, action) {
 				isLoading: false,
 				isLoaded: true,
 				error: action.error
+			}
+		case CONTRIBUTORS_PAGE_UP:
+			return {
+				...state,
+				page: state.page + 1
 			}
 		default:
 			return state
