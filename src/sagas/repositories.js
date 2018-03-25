@@ -1,4 +1,4 @@
-import { takeEvery, call, put } from 'redux-saga/effects'
+import { takeEvery, call, put, select } from 'redux-saga/effects'
 import { fetch } from '../services/fetch'
 import { 
     FETCH_REPOSITORIES,
@@ -6,10 +6,15 @@ import {
     FETCH_REPOSITORIES_ERROR
 } from '../actions/types'
 
-function* workerFetchRepositories({ payload }) {
+function* workerFetchRepositories() {
+    const query = yield select(({ search }) => search.query)
+
     const options = {
-        url: 'repositories',
-        params: { q: payload }
+        url: 'search/repositories',
+        params: { 
+            q: query,
+            per_page: '6' 
+        }
     }
 
 	try {
