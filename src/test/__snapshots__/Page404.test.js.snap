@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<Container>
+  <div>
+    <h1>
+      Psst! You shouldn't be here!
+    </h1>
+    <p>
+      Go back 
+      <Link
+        replace={false}
+        to="/"
+      >
+        HOME
+      </Link>
+       and search for more repositories.
+    </p>
+  </div>
+</Container>
+`;
