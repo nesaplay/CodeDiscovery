@@ -51,7 +51,6 @@ class Contributors extends Component {
 
 	_displayContributors() {
 		const { data } = this.props.contributors
-		const { Column } = Grid
 
 		return (
 			data &&

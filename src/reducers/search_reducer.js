@@ -1,5 +1,4 @@
 import { 
-    SEARCH_UPDATE, 
     SEARCH_SUBMIT, 
     SEARCH_RESET 
 } from '../actions/types'
