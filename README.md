@@ -7,9 +7,9 @@ DEMO : [CodeDiscovery](https://nesaplay.github.io/CodeDiscovery/)
 
 ## STACK
 
-  - React + Redux
-  - Redux-Saga
-  - Semantic-UI-react
+    -   React + Redux
+    -   Redux-Saga
+    -   Semantic-UI-react
 
 
 Or to clone it yourself:
