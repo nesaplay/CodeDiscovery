@@ -15,6 +15,10 @@ class Home extends Component {
 		this.props.fetchRepositories()
 	)
 
+	componentWillUnmount() {
+		this.props.resetRepositoriesPage()
+	}
+
 	render() {
 		const { Row, Column } = Grid
 		const { isLoading } = this.props.repositories

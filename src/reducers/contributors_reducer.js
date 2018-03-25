@@ -2,7 +2,8 @@ import {
 	FETCH_CONTRIBUTORS,
 	FETCH_CONTRIBUTORS_SUCCESS,
     FETCH_CONTRIBUTORS_ERROR,
-    CONTRIBUTORS_PAGE_UP
+    CONTRIBUTORS_PAGE_UP,
+    RESET_CONTRIBUTORS
 } from '../actions/types'
 
 const initState = {
@@ -41,6 +42,8 @@ export default function(state = initState, action) {
 				...state,
 				page: state.page + 1
 			}
+		case RESET_CONTRIBUTORS:
+			return initState
 		default:
 			return state
 	}

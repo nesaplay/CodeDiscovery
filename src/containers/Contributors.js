@@ -14,6 +14,10 @@ class Contributors extends Component {
 		this._fetchContributors()
 	}
 
+	componentWillUnmount() {
+		this.props.resetContributorsPage()
+	}
+
 	render() {
 		const { Row, Column } = Grid
 		const { isLoading } = this.props.contributors

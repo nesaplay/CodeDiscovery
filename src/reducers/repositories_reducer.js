@@ -1,7 +1,8 @@
 import {
 	FETCH_REPOSITORIES,
 	FETCH_REPOSITORIES_SUCCESS,
-	FETCH_REPOSITORIES_ERROR
+	FETCH_REPOSITORIES_ERROR,
+    RESET_REPOSITORIES
 } from '../actions/types'
 
 const initState = {
@@ -34,6 +35,8 @@ export default function(state = initState, action) {
 				isLoaded: true,
 				error: action.error
 			}
+		case RESET_REPOSITORIES:
+			return initState
 		default:
 			return state
 	}
