@@ -3,7 +3,7 @@ import { delay } from 'redux-saga'
 import { SEARCH_UPDATE, SEARCH_SUBMIT } from '../actions/types'
 
 function* workerSearchRepositories({ payload }) {
-	yield call(delay, 500)
+	yield call(delay, 50)
 	yield put({ type: SEARCH_SUBMIT, payload })
 }
 
