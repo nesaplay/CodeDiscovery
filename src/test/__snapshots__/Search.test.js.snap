@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<Input
+  action={
+    <Button
+      as="button"
+      loading={undefined}
+      onClick={[Function]}
+      type="submit"
+    >
+      Search
+    </Button>
+  }
+  fluid={true}
+  icon="github"
+  iconPosition="left"
+  onChange={[Function]}
+  placeholder="Search github repositiories..."
+  size="huge"
+  type="text"
+/>
+`;

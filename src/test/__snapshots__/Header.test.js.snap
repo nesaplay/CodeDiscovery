@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<header>
+  <Grid>
+    <GridRow
+      style={
+        Object {
+          "marginTop": "20px",
+        }
+      }
+    >
+      <GridColumn>
+        <Link
+          replace={false}
+          to="/"
+        >
+          <Header
+            as="h3"
+            icon={true}
+            textAlign="center"
+          >
+            <Icon
+              as="i"
+              circular={true}
+              name="users"
+            />
+            <HeaderContent>
+              Code Discovery
+            </HeaderContent>
+          </Header>
+        </Link>
+        <Divider />
+      </GridColumn>
+    </GridRow>
+  </Grid>
+</header>
+`;

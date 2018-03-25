@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<Card
+  color="orange"
+  fluid={true}
+>
+  <CardContent>
+    <Link
+      replace={false}
+      to="/repos/undefined/contributors"
+    >
+      <Label
+        color="orange"
+        ribbon="right"
+      >
+        Top Contributors
+      </Label>
+    </Link>
+    <CardHeader>
+      <a
+        target="_blank"
+      />
+    </CardHeader>
+    <CardMeta />
+    <CardDescription />
+  </CardContent>
+  <CardContent
+    extra={true}
+  >
+    <span
+      className="ui left floated"
+    >
+      <Icon
+        as="i"
+        name="star"
+      />
+       
+    </span>
+    <span
+      className="ui right floated"
+    >
+      <Icon
+        as="i"
+        name="warning sign"
+      />
+       
+    </span>
+  </CardContent>
+</Card>
+`;

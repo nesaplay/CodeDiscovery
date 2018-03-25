@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a component 1`] = `
+<Card
+  color="orange"
+  fluid={true}
+>
+  <CardContent>
+    <Image
+      as="img"
+      floated="right"
+      size="tiny"
+      style={
+        Object {
+          "position": "absolute",
+          "right": "20px",
+        }
+      }
+      ui={true}
+    />
+    <CardHeader />
+    <CardMeta />
+    <CardDescription>
+       contributions
+    </CardDescription>
+  </CardContent>
+  <CardContent
+    extra={true}
+  >
+    <div
+      className="ui buttons fluid"
+    >
+      <a
+        style={
+          Object {
+            "width": "100%",
+          }
+        }
+        target="_blank"
+      >
+        <Button
+          as="button"
+          basic={true}
+          color="orange"
+          fluid={true}
+        >
+          More from this user
+        </Button>
+      </a>
+    </div>
+  </CardContent>
+</Card>
+`;
