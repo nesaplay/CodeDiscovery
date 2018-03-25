@@ -8,4 +8,4 @@ import {
 export const updateSearchQuery = query => ({ type: SEARCH_UPDATE, payload: query })
 
 export const fetchRepositories = () => ({ type: FETCH_REPOSITORIES })
-export const fetchContributors = () => ({ type: FETCH_CONTRIBUTORS })
+export const fetchContributors = url => ({ type: FETCH_CONTRIBUTORS, payload: url })
