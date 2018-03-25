@@ -62,7 +62,6 @@ class Home extends Component {
 
 	_displayRepositories() {
 		const { items } = this.props.repositories.data
-		const { Column } = Grid
 
 		return (
 			items && items.map(repo => 
