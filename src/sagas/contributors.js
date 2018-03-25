@@ -8,17 +8,18 @@ import {
 } from '../actions/types'
 
 function* workerFetchContributors({ payload }) {
-    yield put({ type: CONTRIBUTORS_PAGE_UP })
-
     const { page } = yield select(state => state.contributors)
+    const isFirstPage = page === 1
 
     const options = {
         url: payload,
         params: { 
-            page: page,
-            per_page: '10' 
+            page: isFirstPage ? page : page + 1,
+            per_page: isFirstPage ?  '10' : '5' 
         }
     }
+
+    yield put({ type: CONTRIBUTORS_PAGE_UP })
 
 	try {
 		const { data } = yield call(fetch, options)

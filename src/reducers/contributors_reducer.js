@@ -8,7 +8,7 @@ import {
 
 const initState = {
 	data: [],
-	page: 0,
+	page: 1,
 	isLoading: false,
 	isLoaded: false,
 	error: null
