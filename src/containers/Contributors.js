@@ -20,7 +20,7 @@ class Contributors extends Component {
 
 	render() {
 		const { Row, Column } = Grid
-		const { isLoading } = this.props.contributors
+		const { isLoading, hasMore } = this.props.contributors
 
 		return (
 			<Container text>
@@ -34,8 +34,13 @@ class Contributors extends Component {
 					</Row>
 					<Row>
 						<Column textAlign="center">
-							<Button primary color="blue" loading={isLoading} onClick={this.onLoadMoreClick}>
-								Load More...
+							<Button
+								primary
+								color="blue"
+								loading={isLoading}
+								onClick={this.onLoadMoreClick}
+								disabled={!hasMore}>
+								{hasMore ? 'Load More...' : 'No more!'}
 							</Button>
 						</Column>
 					</Row>
@@ -57,9 +62,10 @@ class Contributors extends Component {
 	}
 
 	_fetchContributors() {
-		const { location, fetchContributors } = this.props
+		const { username, projectname } = this.props.match.params
+		const url = `/repos/${username}/${projectname}/contributors`
 
-		fetchContributors(location.pathname)
+		this.props.fetchContributors(url)
 	}
 }
 

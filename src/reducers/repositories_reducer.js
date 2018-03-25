@@ -32,8 +32,8 @@ export default function(state = initState, action) {
 			return {
 				...state,
 				isLoading: false,
-				isLoaded: true,
-				error: action.error
+				isLoaded: false,
+				error: action.error.message
 			}
 		case RESET_REPOSITORIES:
 			return initState
