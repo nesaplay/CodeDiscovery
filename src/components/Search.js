@@ -11,8 +11,14 @@ const Search = ({
             placeholder='Search github repositiories...' 
             size='huge'
             fluid
-            action={<Button loading={isLoading} onClick={() => clickHandler()}>Search</Button>}
             onChange={({ target }) => searchHandler(target.value)}
+            action={
+                <Button type='submit' 
+                    loading={isLoading} 
+                    onClick={() => clickHandler()}>
+                    Search
+                </Button>
+            }
         />
     )
 

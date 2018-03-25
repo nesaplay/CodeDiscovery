@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { Container, Grid, Card } from 'semantic-ui-react'
+import { Container, Grid, Card, Message, Form } from 'semantic-ui-react'
 
 import * as actions from '../actions'
 import Search from '../components/Search'
 import RepositoryCard from '../components/RepositoryCard'
+import Placeholder from '../components/Placeholder'
 
 class Home extends Component {
 	onSearchChange = query => (
@@ -17,31 +18,43 @@ class Home extends Component {
 
 	componentWillUnmount() {
 		this.props.resetRepositoriesPage()
+		this.props.resetSearchQuery()
 	}
 
 	render() {
 		const { Row, Column } = Grid
-		const { isLoading } = this.props.repositories
+		const { isLoading, isLoaded, error } = this.props.repositories
 
 		return (
 			<Container>
 				<Grid>
 					<Row columns={1}>
 						<Column>
-							<Search
-								searchHandler={this.onSearchChange}
-								clickHandler={this.onSearchClick}
-								isLoading={isLoading}
-							/>
+							<Form error={!!error}>
+								<Search
+									searchHandler={this.onSearchChange}
+									clickHandler={this.onSearchClick}
+									isLoading={isLoading}
+								/>
+								<Message error header="Oops!" content={error} />
+							</Form>
 						</Column>
 					</Row>
-					<Row>
-						<Column>
-							<Card.Group itemsPerRow={2}>
-								{this._displayRepositories()}
-							</Card.Group>
-						</Column>
-					</Row>
+					{isLoaded ? (
+						<Row>
+							<Column>
+								<Card.Group itemsPerRow={2}>
+									{this._displayRepositories()}
+								</Card.Group>
+							</Column>
+						</Row>
+					) : (
+						<Row>
+							<Column textAlign="center">
+								<Placeholder />
+							</Column>
+						</Row>
+					)}
 				</Grid>
 			</Container>
 		)
@@ -52,12 +65,9 @@ class Home extends Component {
 		const { Column } = Grid
 
 		return (
-			items && items.map(repo => (
-				<RepositoryCard 
-					{...repo} 
-					key={repo.id} 
-				/>
-			))
+			items && items.map(repo => 
+				<RepositoryCard {...repo} key={repo.id} />
+			)
 		)
 	}
 }

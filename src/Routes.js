@@ -9,7 +9,7 @@ const AsyncPage404 = asyncComponent(() => import('./components/Page404'))
 export default () => (
 	<Switch>
 		<Route path="/" exact component={AsyncHome} />
-		<Route path="/:name" component={AsyncContributors} />
+		<Route path="/repos/:username/:projectname/contributors" exact component={AsyncContributors} />
 		<Route component={AsyncPage404} />
 	</Switch>
 )

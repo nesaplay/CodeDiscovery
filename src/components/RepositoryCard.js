@@ -30,8 +30,12 @@ const RepositoryCard = ({
 				<Description>{description}</Description>
 			</Content>
 			<Content extra>
-				<Icon name="star" /> {stargazers_count}
-				<Icon name="warning sign" /> {open_issues_count}
+				<span className='ui left floated'>
+					<Icon name="star" /> {stargazers_count}
+				</span>
+				<span className='ui right floated'>
+					<Icon name="warning sign" /> {open_issues_count}
+				</span>
 			</Content>
 		</Card>
 	)

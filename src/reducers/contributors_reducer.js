@@ -3,13 +3,15 @@ import {
 	FETCH_CONTRIBUTORS_SUCCESS,
     FETCH_CONTRIBUTORS_ERROR,
     CONTRIBUTORS_PAGE_UP,
-    RESET_CONTRIBUTORS
+    RESET_CONTRIBUTORS,
+    FETCH_CONTRIBUTORS_END
 } from '../actions/types'
 
 const initState = {
 	data: [],
 	page: 1,
 	isLoading: false,
+	hasMore: true,
 	isLoaded: false,
 	error: null
 }
@@ -20,7 +22,8 @@ export default function(state = initState, action) {
 			return {
 				...state,
                 isLoading: true,
-                isLoaded: false,
+				isLoaded: false,
+				hasMore: true,
 				error: null
 			}
 		case FETCH_CONTRIBUTORS_SUCCESS:
@@ -35,7 +38,14 @@ export default function(state = initState, action) {
 				...state,
 				isLoading: false,
 				isLoaded: true,
-				error: action.error
+				error: action.error.message
+			}
+		case FETCH_CONTRIBUTORS_END:
+			return {
+				...state,
+				isLoading: false,
+				isLoaded: true,
+				hasMore: false
 			}
 		case CONTRIBUTORS_PAGE_UP:
 			return {
